@@ -6,6 +6,13 @@ const router = express.Router();
 
 router.get('/',homeController.home);
 
-// router.get('/user',homeController.user);
+router.post('/', (req, res) => {
+    res.send('POST request to the homepage')
+  })
+
+
+router.use('/users', require('./users'));
+
+// router.get('/user',homeController.home);
 
 module.exports = router;
